@@ -47,6 +47,7 @@ function API1() {
             .then((res) => {
                 setMessage("Add successfull")
                 setData([...data, { id: res.data.id, name: name }])
+                setText("")
             })
             .catch((error) => {
                 console.log(error)
@@ -81,7 +82,7 @@ function API1() {
                     <Input type="text" onChange={(e) => setText(e.target.value)} onKeyDown={(e) => {
                         if (e.key === "Enter") {
                             addStudent(text);
-                            setText("")
+                            
                         }
                     }} value={text} />
                 </div>
@@ -113,7 +114,7 @@ function API1() {
                                                 
                                                 editStudent(item.id, textEdit);
                                                 setIsEdit({id:"", flag: false})
-                                                // setText("")
+                                            
                                             }
                                         }} /> : 
                                         <p onDoubleClick={() => {
